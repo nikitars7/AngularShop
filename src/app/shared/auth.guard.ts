@@ -1,7 +1,6 @@
 import {
   ActivatedRouteSnapshot,
   CanActivate,
-  CanActivateFn,
   GuardResult,
   MaybeAsync,
   Router,
@@ -9,6 +8,7 @@ import {
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): MaybeAsync<GuardResult> {
+  ): Observable<GuardResult> | Promise<GuardResult> | boolean {
     if (this.auth.isAuthenticated()) {
       return true;
     } else {

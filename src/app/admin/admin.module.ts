@@ -9,6 +9,7 @@ import { OrdersPageComponent } from './orders-page/orders-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { AuthGuard } from '../shared/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QuillModule } from 'ngx-quill';
 @NgModule({
   imports: [
     CommonModule,
@@ -42,6 +43,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         ],
       },
     ]),
+    QuillModule.forRoot(),
   ],
   exports: [RouterModule],
 })

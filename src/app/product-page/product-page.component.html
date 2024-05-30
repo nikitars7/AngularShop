@@ -1,1 +1,21 @@
-<p>product-page works!</p>
+<div *ngIf="product$ | async as product">
+  <div class="product">
+    <div class="header-right">
+      <button [routerLink]="['/']" class="btn btn-dark">Back</button>
+    </div>
+    <div class="flex">
+      <div class="item text-center">
+        <h2>{{ product.title }}</h2>
+        <div>{{ product.price }}</div>
+        <div>Price: {{ product.price }} $</div>
+        <button [routerLink]="['/cart']" class="btn btn-dark">
+          Add to cart
+        </button>
+      </div>
+      <div class="item">
+        <h2>Information:</h2>
+        <div>{{ product.info }}</div>
+      </div>
+    </div>
+  </div>
+</div>

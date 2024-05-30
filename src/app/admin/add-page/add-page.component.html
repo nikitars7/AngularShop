@@ -27,14 +27,30 @@
       >
     </div>
   </div>
-  <div class="form-control">
-    <label for="type">Photo:</label>
+  <!-- <div class="form-control">
+    <label for="photo">Photo</label>
     <quill-editor formControlName="photo"></quill-editor>
-  </div>
-  <div class="form-control">
-    <label for="type">Information:</label>
+    <div
+        *ngIf="form.get('photo').touched && form.get('photo').invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get('photo').errors.required"
+          >Enter product name</small
+        >
+      </div>
+  </div> -->
+  <!-- <div class="form-control">
+    <label for="info">Information</label>
     <quill-editor formControlName="info"></quill-editor>
-  </div>
+    <div
+        *ngIf="form.get('info').touched && form.get('info').invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get('info').errors.required"
+          >Enter product name</small
+        >
+      </div>
+  </div> -->
   <div class="form-control">
     <label for="price">Price</label>
     <input id="price" type="price" formControlName="price" />

@@ -5,15 +5,24 @@ import { DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../../shared/search.pipe';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterLinkActive, RouterLink, CommonModule],
+  imports: [
+    RouterLinkActive,
+    RouterLink,
+    CommonModule,
+    FormsModule,
+    SearchPipe,
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit {
   products: Product[] = [];
+  productName: string;
   constructor(
     private productServ: ProductService,
     private destroyRef: DestroyRef

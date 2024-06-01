@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Product } from '../shared/interfaces';
 
 @Component({
   selector: 'app-product',
@@ -9,5 +10,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './product.component.scss',
 })
 export class ProductComponent {
-  @Input() product;
+  @Input() product: Product;
 }

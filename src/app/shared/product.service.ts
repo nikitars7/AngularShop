@@ -46,4 +46,13 @@ export class ProductService {
         })
       );
   }
+  remove(id: string) {
+    return this.http.delete(`${environment.fbDataBaseUrl}/products/${id}.json`);
+  }
+  update(product: Product) {
+    return this.http.patch(
+      `${environment.fbDataBaseUrl}/products/${product.id}.json`,
+      product
+    );
+  }
 }
